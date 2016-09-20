@@ -1,0 +1,246 @@
+Action graph representation for reasoning
+  Node
+    (max 1)state= StateAY
+    x (some)nextAction= ActionAY
+      Note Since we want to represent (ActionAY, {next nodes}), we introduce an edge class.
+    (some)edge= EdgeAY
+
+  Edge
+    (exactly 1)action= ActionAY
+    (some)nextNode= Node
+      Note-1 Action results would be several.
+      Note-2 nextNode is different from effect as nextNode varies in different tasks.<-- Really???
+      Note-3 Number of nextNode == number of ActionAY.effect
+
+StateAY: state container at a time interval
+  time= TimePoint
+  objects (individuals or classes...?) each of which may include state/features
+  parameters; e.g. target-amount, grasping-parameters...?
+
+ActionAY: general action class
+  (Note objectActedOn is represented in TaskAY)
+  (max 1)task= TaskAY
+  (max 1)state= StateAY  // State at the beginning of the action
+  (max 1)nextState= StateAY  // State at the end of the action
+  (max 1)preCondition= Expression<bool(context=this)>
+  x (max 1)effect= Expression<StateAY(context=this)>
+    Note In order to represent bifurcation (multiple effects), we introduce an effect class.
+  (some)effect= EffectAY
+    Note Each effect happens INDEPENDENTLY.
+
+EffectAY: general action effect class
+
+EffectAY-AddProperty
+
+EffectAY-ChangeProperty
+
+EffectAY-Composite
+  (some)effect EffectAY
+    Note All effects happen SIMULTANEOUSLY.
+
+Expression: general expression class
+
+task_pour1= TaskAY()
+task_pour1.source= Coke101
+task_pour1.receiver= Glass102
+task_pour1.targetAmount= 0.5
+pour_action1= ActionAY()
+pour_action1.effect= Expression(context=pour_action1)
+  context.nextState= Copy(context.state)
+  source= findByName(context.state.object,context.task.source)
+  receiver= findByName(context.state.object,context.task.receiver)
+  source.amount= source.amount - context.task.targetAmount
+  receiver.amount= receiver.amount + context.task.targetAmount
+  return state
+
+NOTE-1: We need <<findByName>>.
+  An example: source= findByName(state.object,context.task.source)
+  Let's assume state.object={Coke101@12, Glass102@12} and task.source=Coke101.
+  We want to find Coke101@12 from state.object according to task.source.
+  Coke101@12 means a subclass of Coke101 at time 12.
+  Perhaps B=findByName(S, A) would return B which is in a set S and is a subclass of A.
+
+NOTE-2: Expression<StateAY(context=this)> would be a set of assignments. --> Changed
+
+
+Action effect representation
+Case study.
+context= GraspingAction001
+context.task= GraspingTask001
+context.task.hand= Baxter01-GripperLeft
+context.task.object= Cnt001
+context.state.object[Cnt001]= Cnt001-001
+context.state.object[Cnt001].pose= Pose-001-001
+context.state.object[Cnt001].timeStart= Time-001
+context.state.object[Cnt002]= Cnt002-001
+
+Note.
+context.state.object[X]==findByName(context.state.object,X)
+e.g. findByName(context.state.object,context.task.object) gives Cnt001-001
+
+Task
+  objectActedOn OR thingsInvolved  // thingsInvolved is more general since sometimes we want to manipulate concepts
+    some owl:Thing
+  taskToAchieve OR hasTask  // hasTask is my version
+    some ConditionAY  // TODO: these should be prioritized or have importance
+
+
+Filling  // General filling task
+  SubClassOf Task
+  thingsInvolved
+    [Material]: Material (liquid/powder/...)
+    [ReceivingContainer]: Container
+      has Amount
+    [TargetAmount]: Scalar value
+  toAchieve
+    ConditionAY
+      ReceivingContainer.Amount > TargetAmount
+
+PouringAY  // General pouring class
+  SubClassOf Pouring
+  objectActedOn
+    [Source container]: Container
+      has Material
+    [Receiving container]: Container
+  precondition: [Nothing]
+  effect
+    [Amount in Receiving container] = [Target amount]
+  taskToAchieve
+    [Amount in Receiving container > Target amount], priority 1 (or, type: constraint, weight: 100)
+      Predicate >
+      Amount
+        Receiving container
+      Target amount
+  subtaskToAchieve <-- or Constraints???
+    [Spilled amount --> min], priority 2 (or, type: constraint, weight: 10)
+    [if Amount in receiving container > Target amount][Amount in Receiving container - Target amount --> min], priority 3 (or, type: constraint, weight: 1)
+
+GuideForPouringAY
+  SubClassOf [Guide]
+  [taskToBeGuided] PouringAY
+  subtaskToAchieve
+    [After moving source container][do not move Receiving container], priority 1 (or, type: constraint, weight: 100), but not mandatory if the robot has a good pouring behavior (i.e. priority-->low/none)
+
+PouringAYA
+  SubClassOf PouringAY
+  precondition
+    [Source container is grasped by ANY-Robot hand]
+    [Source container is at Pouring location]
+      Pouring location  <-- <<Parameter to be planned>>
+
+Tipping
+  SubClassOf PouringAYA
+
+Tipping_Baxter
+  SubClassOf Tipping
+  SubClassOf ActionExecutable.....??? // <-- Is this necessary???
+  implementedOn Baxter // <-- Is this necessary???
+  controller [Tipping_Baxter]  // pointer to a controller
+  controller Parameter
+    Tipping speed  <-- <<Parameter to be planned>>
+    Pouring location  <-- <<Parameter to be planned>>  <-- ???This is already decided in Power
+
+ShakingA
+  SubClassOf PouringAYA
+
+ShakingAA
+  SubClassOf ShakingA
+  SubClassOf ActionExecutable.....???
+  implementedOn Baxter // <-- Is this necessary???
+  controller [ShakingA_Baxter]
+  controller Parameter
+    Shaking axis  <-- <<Parameter to be planned>>
+    Shaking speed  <-- <<Parameter to be planned>>
+
+ShakingB
+  SubClassOf PouringAYA
+
+ShakingBA
+  SubClassOf ShakingB
+  SubClassOf ActionExecutable.....???
+  implementedOn Baxter // <-- Is this necessary???
+  controller [ShakingB_Baxter]
+  controller Parameter
+    Shaking axis  <-- <<Parameter to be planned>>
+    Shaking speed  <-- <<Parameter to be planned>>
+
+GraspingSomethingA
+  SubClassOf GraspingSomething
+  objectActedOn
+    [Target object]: SpatialThing
+    [Hand]: [Robot hand]
+  precondition: [Nothing]
+  taskToAchieve
+    [Target object is grasped by Hand]
+      Grasped
+        Target object
+        Hand
+
+GraspingSomethingAA  // Why separated from Grasping? --> Grasping is a general grasping task, this is a more specific action
+  SubClassOf GraspingSomethingA
+  SubClassOf ActionExecutable.....???
+  precondition
+    NOT [ANYTHING is grasped by Hand]
+    [Hand is at Grasping pose of Target object]
+      Grasping pose  <-- <<Parameter to be planned>>
+  effect
+    [Target object is grasped by Hand]
+
+MovingAnObject
+  SubClassOf Movement-TranslationEvent
+  SubClassOf ActionExecutable.....???
+  objectActedOn
+    [Target object]: SpatialThing  // Object to be moved
+    [Hand]: [Robot hand]  // Hand to hold Target object
+  precondition: [Nothing]
+  taskToAchieve
+    [Target object is at Target position]
+      At
+        Target object
+        Target position
+
+MovingAnObjectA
+  SubClassOf MovingAnObject
+  SubClassOf ActionExecutable.....???
+  precondition
+    [Target object is grasped by Hand]
+  effect
+    [Target object is at Target position]
+
+
+
+
+
+--> Google drive.
+What is an effect (change) of an action?
+  It is a combination of one/some/zero of following:
+    [A] Something that modifies object symbolic properties
+      (e.g. painting --> (change) object.color = red-->green)
+    [B] Something that modifies object numerical properties
+      (e.g. pushing --> (change) object.position = (x1,y1,z1)-->(x2,y2,z2))
+    [C] Something that adds new object symbolic properties
+      (e.g. grasping --> (add) object.hasGrasped, object.ontop)
+    [D] Something that adds new object numerical properties
+      (e.g. cutting --> (add) object.cutLine = (p1,p2,...))
+    [E] Something that creates new classes/individuals
+      (e.g. pouring --> (add) flow)
+  NOTE:
+    These changes are caused by not only actions.
+    They might be caused passively (by time passage).
+    (e.g. time passage --> (change) object.state = melted-->frozen)
+
+How to represent the effects?
+  [1] Using predicates (cf. Daniel's ActionEffect robohow/knowrob_actions/owl/action-effects.owl)
+  [2] Using existing classes
+    PhysicalEvent == [A][B][C][D][E]
+    IntrinsicStateChangeEvent == [A][B][C][D]
+    ((Why IntrinsicStateChangeEvent is not a subclass of PhysicalEvent??))
+  [3] Making new class EventAY
+
+How to use effects?
+  Simulating (estimating) future states
+  NOTE:
+    [a] For this purpose, distinguishing "effects (changes) caused by actions" and "passive changes" (see above) is not important.
+    [b] Distinguishing "physical event" and "mental event" (e.g. Tom becomes happy) is not important.
+    [c] We need an organized structure with which the future simulation is conducted.
+

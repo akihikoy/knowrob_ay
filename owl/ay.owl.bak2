@@ -1,0 +1,1448 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://knowrob.org/kb/ay.owl#"
+     xml:base="http://knowrob.org/kb/ay.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:ay="http://knowrob.org/kb/ay.owl"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:knowrob="http://knowrob.org/kb/knowrob.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:computable="http://knowrob.org/kb/computable.owl#">
+    <owl:Ontology rdf:about="http://knowrob.org/kb/ay.owl">
+        <owl:imports rdf:resource="http://knowrob.org/kb/knowrob.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#action -->
+
+    <owl:ObjectProperty rdf:about="http://knowrob.org/kb/ay.owl#action">
+        <rdfs:range rdf:resource="http://knowrob.org/kb/ay.owl#ActionAY"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#actionGraphElement -->
+
+    <owl:ObjectProperty rdf:about="http://knowrob.org/kb/ay.owl#actionGraphElement"/>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#condition -->
+
+    <owl:ObjectProperty rdf:about="http://knowrob.org/kb/ay.owl#condition">
+        <rdfs:range rdf:resource="http://knowrob.org/kb/ay.owl#ConditionAY"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#edge -->
+
+    <owl:ObjectProperty rdf:about="http://knowrob.org/kb/ay.owl#edge">
+        <rdfs:subPropertyOf rdf:resource="http://knowrob.org/kb/ay.owl#actionGraphElement"/>
+        <rdfs:range rdf:resource="http://knowrob.org/kb/ay.owl#EdgeAY"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#effect -->
+
+    <owl:ObjectProperty rdf:about="http://knowrob.org/kb/ay.owl#effect">
+        <rdfs:domain rdf:resource="http://knowrob.org/kb/ay.owl#ActionAY"/>
+        <rdfs:range rdf:resource="http://knowrob.org/kb/ay.owl#EventAY"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#goal -->
+
+    <owl:ObjectProperty rdf:about="http://knowrob.org/kb/ay.owl#goal">
+        <rdfs:range rdf:resource="http://knowrob.org/kb/ay.owl#ConditionWithImportanceAY"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#hand -->
+
+    <owl:ObjectProperty rdf:about="http://knowrob.org/kb/ay.owl#hand"/>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#lhs -->
+
+    <owl:ObjectProperty rdf:about="http://knowrob.org/kb/ay.owl#lhs"/>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#nextNode -->
+
+    <owl:ObjectProperty rdf:about="http://knowrob.org/kb/ay.owl#nextNode">
+        <rdfs:subPropertyOf rdf:resource="http://knowrob.org/kb/ay.owl#actionGraphElement"/>
+        <rdfs:range rdf:resource="http://knowrob.org/kb/ay.owl#NodeAY"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#object -->
+
+    <owl:ObjectProperty rdf:about="http://knowrob.org/kb/ay.owl#object"/>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#pose -->
+
+    <owl:ObjectProperty rdf:about="http://knowrob.org/kb/ay.owl#pose"/>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#preCondition -->
+
+    <owl:ObjectProperty rdf:about="http://knowrob.org/kb/ay.owl#preCondition">
+        <rdfs:domain rdf:resource="http://knowrob.org/kb/ay.owl#ActionAY"/>
+        <rdfs:range rdf:resource="http://knowrob.org/kb/ay.owl#ConditionAY"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#property2 -->
+
+    <owl:ObjectProperty rdf:about="http://knowrob.org/kb/ay.owl#property2"/>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#property3 -->
+
+    <owl:ObjectProperty rdf:about="http://knowrob.org/kb/ay.owl#property3"/>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#receiver -->
+
+    <owl:ObjectProperty rdf:about="http://knowrob.org/kb/ay.owl#receiver">
+        <rdfs:subPropertyOf rdf:resource="http://knowrob.org/kb/knowrob.owl#objectActedOn"/>
+        <rdfs:range rdf:resource="http://knowrob.org/kb/ay.owl#ContainerAY"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#rhs -->
+
+    <owl:ObjectProperty rdf:about="http://knowrob.org/kb/ay.owl#rhs"/>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#sandProp -->
+
+    <owl:ObjectProperty rdf:about="http://knowrob.org/kb/ay.owl#sandProp">
+        <rdfs:comment>This is a KnowRob and OWL play ground (only for test).</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#source -->
+
+    <owl:ObjectProperty rdf:about="http://knowrob.org/kb/ay.owl#source">
+        <rdfs:subPropertyOf rdf:resource="http://knowrob.org/kb/knowrob.owl#objectActedOn"/>
+        <rdfs:range rdf:resource="http://knowrob.org/kb/ay.owl#ContainerAY"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#state -->
+
+    <owl:ObjectProperty rdf:about="http://knowrob.org/kb/ay.owl#state">
+        <rdfs:range rdf:resource="http://knowrob.org/kb/ay.owl#StateAY"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#task -->
+
+    <owl:ObjectProperty rdf:about="http://knowrob.org/kb/ay.owl#task">
+        <rdfs:range rdf:resource="http://knowrob.org/kb/ay.owl#TaskAY"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#testp12 -->
+
+    <owl:ObjectProperty rdf:about="http://knowrob.org/kb/ay.owl#testp12">
+        <rdfs:subPropertyOf rdf:resource="http://knowrob.org/kb/ay.owl#sandProp"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#testp1e -->
+
+    <owl:ObjectProperty rdf:about="http://knowrob.org/kb/ay.owl#testp1e">
+        <rdfs:subPropertyOf rdf:resource="http://knowrob.org/kb/ay.owl#sandProp"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#time -->
+
+    <owl:ObjectProperty rdf:about="http://knowrob.org/kb/ay.owl#time"/>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#timeEnd -->
+
+    <owl:ObjectProperty rdf:about="http://knowrob.org/kb/ay.owl#timeEnd">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#timeStart -->
+
+    <owl:ObjectProperty rdf:about="http://knowrob.org/kb/ay.owl#timeStart"/>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#value -->
+
+    <owl:ObjectProperty rdf:about="http://knowrob.org/kb/ay.owl#value">
+        <rdfs:comment>General value property used in Expression</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#conditionTest -->
+
+    <owl:DatatypeProperty rdf:about="http://knowrob.org/kb/ay.owl#conditionTest">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#importance -->
+
+    <owl:DatatypeProperty rdf:about="http://knowrob.org/kb/ay.owl#importance">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#linkToModel -->
+
+    <owl:DatatypeProperty rdf:about="http://knowrob.org/kb/ay.owl#linkToModel">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#property -->
+
+    <owl:DatatypeProperty rdf:about="http://knowrob.org/kb/ay.owl#property"/>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#sandData -->
+
+    <owl:DatatypeProperty rdf:about="http://knowrob.org/kb/ay.owl#sandData">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:comment>This is a KnowRob and OWL play ground (only for test).</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#targetAmount -->
+
+    <owl:DatatypeProperty rdf:about="http://knowrob.org/kb/ay.owl#targetAmount">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#testd13 -->
+
+    <owl:DatatypeProperty rdf:about="http://knowrob.org/kb/ay.owl#testd13">
+        <rdfs:subPropertyOf rdf:resource="http://knowrob.org/kb/ay.owl#sandData"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#testd14 -->
+
+    <owl:DatatypeProperty rdf:about="http://knowrob.org/kb/ay.owl#testd14">
+        <rdfs:subPropertyOf rdf:resource="http://knowrob.org/kb/ay.owl#sandData"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topDataProperty -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topDataProperty">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#ActionAY -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#ActionAY">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#SandBox"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#effect"/>
+                <owl:someValuesFrom rdf:resource="http://knowrob.org/kb/ay.owl#EffectAY"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#preCondition"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://knowrob.org/kb/ay.owl#Expression"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#state"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://knowrob.org/kb/ay.owl#StateAY"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#task"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://knowrob.org/kb/ay.owl#TaskAY"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Each action may have some effects.  Only one of effects happens actually.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#ActionGraph -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#ActionGraph">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#SandBox"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#Baxter01-GripperLeft -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#Baxter01-GripperLeft">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#HandAY"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#BinaryOperator -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#BinaryOperator">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#Expression"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#lhs"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://knowrob.org/kb/ay.owl#Expression"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#rhs"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://knowrob.org/kb/ay.owl#Expression"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#ChangingNumericalProperty -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#ChangingNumericalProperty">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#ChangingProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#ChangingProperty -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#ChangingProperty">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#EventAY"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#ChangingSymbolicProperty -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#ChangingSymbolicProperty">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#ChangingProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#Cnt001 -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#Cnt001">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#ContainerAY2"/>
+        <rdfs:comment>An individual container, but some of properties are not assiend yet</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#Cnt001-001 -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#Cnt001-001">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#Cnt001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#pose"/>
+                <owl:allValuesFrom rdf:resource="http://knowrob.org/kb/ay.owl#Pose-001-001"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#timeStart"/>
+                <owl:allValuesFrom rdf:resource="http://knowrob.org/kb/ay.owl#Time-001"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#CompletingPouring -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#CompletingPouring">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#ChangingSymbolicProperty"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/knowrob.owl#fromState"/>
+                <owl:hasValue rdf:resource="http://knowrob.org/kb/knowrob.owl#DeviceStateOff"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/knowrob.owl#toState"/>
+                <owl:hasValue rdf:resource="http://knowrob.org/kb/knowrob.owl#DeviceStateOn"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Note: fromState and toState are just tests.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#CompletingPouringN -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#CompletingPouringN">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#ChangingNumericalProperty"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#linkToModel"/>
+                <owl:hasValue>parent.receiver.amount = EXTERNAL-FUNCTION(parent.source.amount, parent.targetAmount, other-current-stats)</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#ConditionAY -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#ConditionAY">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#ConditionOnClassOrIndividual -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#ConditionOnClassOrIndividual">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#ConditionAY"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#ConditionOnProperty -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#ConditionOnProperty">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#ConditionAY"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#conditionTest"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#ConditionWithImportanceAY -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#ConditionWithImportanceAY">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#condition"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://knowrob.org/kb/ay.owl#ConditionAY"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#importance"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#ContainerAY -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#ContainerAY">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/knowrob.owl#EnduringThing-Localized"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/knowrob.owl#contains"/>
+                <owl:someValuesFrom rdf:resource="http://knowrob.org/kb/knowrob.owl#SpatialThing-Localized"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#ContainerAY2 -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#ContainerAY2">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#SandBox"/>
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#TemporalThingWithInterval"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#pose"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Should be unified with ContainerAY.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#CreatingClassOrIndividual -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#CreatingClassOrIndividual">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#EventAY"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#CreatingProperty -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#CreatingProperty">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#EventAY"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#DeletingClassOrIndividual -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#DeletingClassOrIndividual">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#EventAY"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#DeletingProperty -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#DeletingProperty">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#EventAY"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#EdgeAY -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#EdgeAY">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#ActionGraph"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#nextNode"/>
+                <owl:someValuesFrom rdf:resource="http://knowrob.org/kb/ay.owl#NodeAY"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#action"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://knowrob.org/kb/ay.owl#ActionAY"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#EffectAY -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#EffectAY">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#SandBox"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#effect"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://knowrob.org/kb/ay.owl#Expression"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#EventAY -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#EventAY">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/knowrob.owl#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#ExprClass -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#ExprClass">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#ExprValue"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#value"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#ExprContext -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#ExprContext">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#ExprClass"/>
+        <rdfs:comment>A special class to represent a context class in expressions</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#ExprProperty -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#ExprProperty">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#ExprValue"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#property"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#ExprValue -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#ExprValue">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#Expression"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#Expression -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#Expression">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#SandBox"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#GraspingAct -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#GraspingAct">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#ActionAY"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#GraspingEffect -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#GraspingEffect">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#EffectAY"/>
+        <rdfs:comment>Grasped-001= subclass of Grasped
+Grasped-001.graspedBy= only context.task.hand
+context.state.(context.task.object).grasped= Grasped-001
+  &lt;-- context.state should be context.nextstate???</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#GraspingTask -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#GraspingTask">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#TaskAY"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#hand"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#object"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#GraspingTask-001 -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#GraspingTask-001">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#GraspingTask"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#hand"/>
+                <owl:allValuesFrom rdf:resource="http://knowrob.org/kb/ay.owl#Baxter01-GripperLeft"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#object"/>
+                <owl:allValuesFrom rdf:resource="http://knowrob.org/kb/ay.owl#Cnt001"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>An instance of the grasping task.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#HandAY -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#HandAY">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#SandBox"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#ImpossibleToPour -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#ImpossibleToPour">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#ChangingSymbolicProperty"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/knowrob.owl#fromState"/>
+                <owl:hasValue rdf:resource="http://knowrob.org/kb/knowrob.owl#DeviceStateOff"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/knowrob.owl#toState"/>
+                <owl:hasValue rdf:resource="http://knowrob.org/kb/knowrob.owl#DeviceStateOff"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#NodeAY -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#NodeAY">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#ActionGraph"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#edge"/>
+                <owl:someValuesFrom rdf:resource="http://knowrob.org/kb/ay.owl#EdgeAY"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#state"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://knowrob.org/kb/ay.owl#StateAY"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#OpAssign -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#OpAssign">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#BinaryOperator"/>
+        <rdfs:comment>Assignment operator rhs=lhs that assign lhs to rhs</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#OpHasProperty -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#OpHasProperty">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#UnaryOperator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#OpNot -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#OpNot">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#UnaryOperator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#OpRefer -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#OpRefer">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#BinaryOperator"/>
+        <rdfs:comment>Reference operator like rhs.lhs that returns a property lhs of rhs</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#Pose-001-001 -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#Pose-001-001">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#PoseAY"/>
+        <rdfs:comment>Is this should be an individual???</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#PoseAY -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#PoseAY">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#SandBox"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#PouringAct -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#PouringAct">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#ActionAY"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#effect"/>
+                <owl:someValuesFrom rdf:resource="http://knowrob.org/kb/ay.owl#CompletingPouring"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#effect"/>
+                <owl:someValuesFrom rdf:resource="http://knowrob.org/kb/ay.owl#ImpossibleToPour"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#task"/>
+                <owl:someValuesFrom rdf:resource="http://knowrob.org/kb/ay.owl#PouringTask"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#PouringTask -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#PouringTask">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#TaskAY"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#receiver"/>
+                <owl:someValuesFrom rdf:resource="http://knowrob.org/kb/ay.owl#ContainerAY"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#source"/>
+                <owl:someValuesFrom rdf:resource="http://knowrob.org/kb/ay.owl#ContainerAY"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#goal"/>
+                <owl:hasValue rdf:resource="http://knowrob.org/kb/ay.owl#GoalOfPouring"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#targetAmount"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#SandBox -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#SandBox">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment>This is a KnowRob and OWL play ground (only for test).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#ShakingA -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#ShakingA">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#PouringAct"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#ShakingB -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#ShakingB">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#PouringAct"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#Squeezing -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#Squeezing">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#PouringAct"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#StateAY -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#StateAY">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#SandBox"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#object"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#time"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://knowrob.org/kb/knowrob.owl#TimePoint"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#T1Action -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#T1Action">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#Toy1"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#effect"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#preCondition"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://knowrob.org/kb/ay.owl#Expression"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#T1GrPC0 -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#T1GrPC0">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#T1Grasping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#T1Grasped -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#T1Grasped">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#Toy1"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#T1Grasping -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#T1Grasping">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#T1Action"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#T1GraspingPreCondition -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#T1GraspingPreCondition">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#OpNot"/>
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#T1Grasping"/>
+        <rdfs:comment>This is defined as a subclass of T1Grasping, but it is totally for a practical reason: better view in Protege</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#T1Obj -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#T1Obj">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#Toy1"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#pose"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://knowrob.org/kb/ay.owl#T1Pose"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#time"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://knowrob.org/kb/ay.owl#T1Time"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#T1Obj1 -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#T1Obj1">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#T1Obj"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#T1Obj1-0 -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#T1Obj1-0">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#T1Obj1"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#pose"/>
+                <owl:someValuesFrom rdf:resource="http://knowrob.org/kb/ay.owl#T1Pose_A"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#time"/>
+                <owl:someValuesFrom rdf:resource="http://knowrob.org/kb/ay.owl#T1Time-0"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#T1Pose -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#T1Pose">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#Toy1"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#T1Pose_A -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#T1Pose_A">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#T1Pose"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#T1Pose_B -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#T1Pose_B">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#T1Pose"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#T1State -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#T1State">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#Toy1"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#object"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://knowrob.org/kb/ay.owl#T1Obj"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#T1State-0 -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#T1State-0">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#T1State"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#object"/>
+                <owl:someValuesFrom rdf:resource="http://knowrob.org/kb/ay.owl#T1Obj1-0"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#T1Time -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#T1Time">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#Toy1"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#T1Time-0 -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#T1Time-0">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#T1Time"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#T1Time-1 -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#T1Time-1">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#T1Time"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#T1Time-2 -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#T1Time-2">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#T1Time"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#TaskAY -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#TaskAY">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#SandBox"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#goal"/>
+                <owl:someValuesFrom rdf:resource="http://knowrob.org/kb/ay.owl#ConditionWithImportanceAY"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#TemporalThingAY -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#TemporalThingAY">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#SandBox"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#TemporalThingWithInterval -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#TemporalThingWithInterval">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#TemporalThingAY"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#timeEnd"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#timeStart"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#Test001 -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#Test001">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#SandBox"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#property2"/>
+                <owl:someValuesFrom rdf:resource="http://knowrob.org/kb/ay.owl#lhs"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#property3"/>
+                <owl:hasValue rdf:resource="http://knowrob.org/kb/ay.owl#lhs"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#property"/>
+                <owl:hasValue>http://knowrob.org/kb/ay.owl#lhs</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#Test002 -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#Test002">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#SandBox"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#lhs"/>
+                <owl:someValuesFrom rdf:resource="http://knowrob.org/kb/ay.owl#T1Time-0"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#Test11 -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#Test11">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#SandBox"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#testp12"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://knowrob.org/kb/ay.owl#Test12"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#testp1e"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://knowrob.org/kb/ay.owl#TestE"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#Test11_1 -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#Test11_1">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#Test11"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#testp1e"/>
+                <owl:allValuesFrom rdf:resource="http://knowrob.org/kb/ay.owl#TestE_1"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#testp12"/>
+                <owl:hasValue rdf:resource="http://knowrob.org/kb/ay.owl#test12_1"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#Test12 -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#Test12">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#SandBox"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#testd13"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#TestE -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#TestE">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#SandBox"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#TestE_1 -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#TestE_1">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#TestE"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#Time-001 -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#Time-001">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#TimePointAY"/>
+        <rdfs:comment>Is this should be an individual???</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#Time-002 -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#Time-002">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#TimePointAY"/>
+        <rdfs:comment>Is this should be an individual???</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#TimePointAY -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#TimePointAY">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#TemporalThingAY"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#time"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#Tipping -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#Tipping">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#PouringAct"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#effect"/>
+                <owl:allValuesFrom rdf:resource="http://knowrob.org/kb/ay.owl#CompletingPouringN"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#Toy1 -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#Toy1">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#SandBox"/>
+        <rdfs:comment>Toy problem to think about symbolic reasoning with symolib dynamical models</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#UnaryOperator -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#UnaryOperator">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/ay.owl#Expression"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/ay.owl#lhs"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://knowrob.org/kb/ay.owl#Expression"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#lhs -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/ay.owl#lhs"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#GoalOfPouring -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/ay.owl#GoalOfPouring">
+        <rdf:type rdf:resource="http://knowrob.org/kb/ay.owl#ConditionWithImportanceAY"/>
+        <condition rdf:resource="http://knowrob.org/kb/ay.owl#GoalOfPouring-Amount"/>
+        <importance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</importance>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#GoalOfPouring-Amount -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/ay.owl#GoalOfPouring-Amount">
+        <rdf:type rdf:resource="http://knowrob.org/kb/ay.owl#ConditionOnProperty"/>
+        <conditionTest>[!!Empirical!!] parent.receiver.Amount &gt; parent.targetAmount</conditionTest>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#PouringFinished -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/ay.owl#PouringFinished"/>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#lhs -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/ay.owl#lhs"/>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#test11_1 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/ay.owl#test11_1">
+        <rdf:type rdf:resource="http://knowrob.org/kb/ay.owl#Test11"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/ay.owl#test12_1 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/ay.owl#test12_1">
+        <rdf:type rdf:resource="http://knowrob.org/kb/ay.owl#Test12"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi -->
+
