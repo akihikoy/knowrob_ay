@@ -1,0 +1,33 @@
+Things to do:
+
+1. Search actedOn not only from State.thing, but also sub-properties of State.thing.
+Currently we need to do
+?- create_property_some(ay:'T1State-0', ay:thing, ay:'T1Pose_A').
+?- create_property_some(ay:'T1State-0', ay:thing, ay:'T1Pose_B').
+so that selectable_action_at_state can choose ay:'T1Pose_A' and ay:'T1Pose_B' as actedOn of actions (actually tasks).
+- Issue: This is a bit weird.
+- Solution: Search not only State.thing, but also sub-properties of State.thing.
+
+2. Define a heuristic function and implement A* search.
+- Issue: Currently the search algorithm is breadth-first search, which is slow.
+- Solution: A* will improve? (but our goal is finding a graph, not shortest path)
+- Issue: We need a heuristic function for A*
+- Solution: Count a number of different state elements as heuristic distance function.
+
+3. Make a predicate to check equality of two states.
+- Issue: No loop detections in search algorithm.
+
+Note. 2 and 3 are close.
+Make a predicate that gives a "distance" between two states which is a number of different state elements (solution to 2).  If it returns zero, then it means two states are equal.
+
+4. Make it faster.
+Actually speed has been improved.
+Version 1: 1.6 sec to get a first result (action sequence).
+Version 2: 0.67 sec.
+
+Use profiler to analyze, and use gtrace to track the codes.
+
+?- profile((create_subclass(Task, ay:'T1PickAndPlaceTask'), rdf_assert(Task, rdfs:subClassOf, ay:'IndividualClass'), create_property_some(Task, ay:object, ay:'T1Obj1'), create_property_some(Task, ay:to, ay:'T1Pose_B'), find_action_seq_bf(ay:'T1State-0', Task, ActSeq))).
+
+
+

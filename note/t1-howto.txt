@@ -1,0 +1,212 @@
+This note is describing how to make queries for the toy problem Toy1.
+
+?- disp_properties(ay:'T1State-0').
+[ay:'T1State-0'].ay:object= ay:'T1Obj1-0'
+[ay:'T1State-0',ay:object].ay:pose= ay:'T1Pose_A'
+[ay:'T1State-0',ay:object].ay:specificationOf= ay:'T1Obj1'
+[ay:'T1State-0',ay:object].ay:time= ay:'T1Time-0'
+[ay:'T1State-0'].ay:object= ay:'T1Obj2-0'
+[ay:'T1State-0',ay:object].ay:pose= ay:'T1Pose_A'
+[ay:'T1State-0',ay:object].ay:specificationOf= ay:'T1Obj2'
+[ay:'T1State-0',ay:object].ay:time= ay:'T1Time-0'
+[ay:'T1State-0'].ay:time= ay:'T1Time-0'
+true.
+
+?- t1_test_move_precond(ay:'T1State-0', Res).
+Res = xsd:false .
+
+?- t1_test_release_precond(ay:'T1State-0',Res).
+Res = xsd:false .
+
+?- t1_test_pickandplace_goal(ay:'T1State-0', Res).
+Res = xsd:false .
+
+
+?- t1_apply_grasp_effect3(ay:'T1State-0', Next).
+Next = ay:'T1State-FSxITSXt' .
+
+?- disp_properties(ay:'T1State-FSxITSXt').
+[ay:'T1State-FSxITSXt'].ay:time= ay:'T1Time-VPCGpXbm'
+[ay:'T1State-FSxITSXt'].ay:object= ay:'T1Obj2-0'
+[ay:'T1State-FSxITSXt',ay:object].ay:pose= ay:'T1Pose_A'
+[ay:'T1State-FSxITSXt',ay:object].ay:specificationOf= ay:'T1Obj2'
+[ay:'T1State-FSxITSXt',ay:object].ay:time= ay:'T1Time-0'
+[ay:'T1State-FSxITSXt'].ay:variable= ay:'ExprVarA-WingBxNy'
+[ay:'T1State-FSxITSXt',ay:variable].ay:content= ay:'T1Grasped-ibAhvmeY'
+[ay:'T1State-FSxITSXt',ay:variable,ay:content].ay:hand= ay:'T1Robot1'
+[ay:'T1State-FSxITSXt',ay:variable].ay:id= literal(a)
+[ay:'T1State-FSxITSXt'].ay:object= ay:'T1Obj1-cScwmUpt'
+[ay:'T1State-FSxITSXt',ay:object].ay:pose= ay:'T1Pose_A'
+[ay:'T1State-FSxITSXt',ay:object].ay:specificationOf= ay:'T1Obj1'
+[ay:'T1State-FSxITSXt',ay:object].ay:time= ay:'T1Time-VPCGpXbm'
+[ay:'T1State-FSxITSXt',ay:object].ay:t1grasped= ay:'T1Grasped-ibAhvmeY'
+[ay:'T1State-FSxITSXt',ay:object,ay:t1grasped].ay:hand= ay:'T1Robot1'
+true.
+
+?- t1_test_move_precond(ay:'T1State-FSxITSXt', Res).
+Res = xsd:true .
+
+?- t1_test_pickandplace_goal(ay:'T1State-FSxITSXt', Res).
+Res = xsd:false .
+
+
+?- t1_apply_move_effect(ay:'T1State-FSxITSXt', Next).
+Next = ay:'T1State-WsNNrTDf' .
+
+?- disp_properties(ay:'T1State-WsNNrTDf').
+[ay:'T1State-WsNNrTDf'].ay:time= ay:'T1Time-VEixmFrf'
+[ay:'T1State-WsNNrTDf'].ay:object= ay:'T1Obj2-0'
+[ay:'T1State-WsNNrTDf',ay:object].ay:pose= ay:'T1Pose_A'
+[ay:'T1State-WsNNrTDf',ay:object].ay:specificationOf= ay:'T1Obj2'
+[ay:'T1State-WsNNrTDf',ay:object].ay:time= ay:'T1Time-0'
+[ay:'T1State-WsNNrTDf'].ay:object= ay:'T1Obj1-UkKPxwlH'
+[ay:'T1State-WsNNrTDf',ay:object].ay:pose= ay:'T1Pose_B'
+[ay:'T1State-WsNNrTDf',ay:object].ay:specificationOf= ay:'T1Obj1'
+[ay:'T1State-WsNNrTDf',ay:object].ay:time= ay:'T1Time-VEixmFrf'
+[ay:'T1State-WsNNrTDf',ay:object].ay:t1grasped= ay:'T1Grasped-ibAhvmeY'
+[ay:'T1State-WsNNrTDf',ay:object,ay:t1grasped].ay:hand= ay:'T1Robot1'
+true.
+
+?- t1_test_release_precond(ay:'T1State-WsNNrTDf', Res).
+Res = xsd:true .
+
+?- t1_test_pickandplace_goal(ay:'T1State-WsNNrTDf', Res).
+Res = xsd:false
+
+?- t1_apply_release_effect(ay:'T1State-WsNNrTDf', Next).
+Next = ay:'T1State-jcuEjsae' .
+
+?- disp_properties(ay:'T1State-jcuEjsae').
+[ay:'T1State-jcuEjsae'].ay:time= ay:'T1Time-dRhefLOw'
+[ay:'T1State-jcuEjsae'].ay:object= ay:'T1Obj2-0'
+[ay:'T1State-jcuEjsae',ay:object].ay:pose= ay:'T1Pose_A'
+[ay:'T1State-jcuEjsae',ay:object].ay:specificationOf= ay:'T1Obj2'
+[ay:'T1State-jcuEjsae',ay:object].ay:time= ay:'T1Time-0'
+[ay:'T1State-jcuEjsae'].ay:object= ay:'T1Obj1-DfuAtnfx'
+[ay:'T1State-jcuEjsae',ay:object].ay:pose= ay:'T1Pose_B'
+[ay:'T1State-jcuEjsae',ay:object].ay:specificationOf= ay:'T1Obj1'
+[ay:'T1State-jcuEjsae',ay:object].ay:time= ay:'T1Time-dRhefLOw'
+true.
+
+?- t1_test_pickandplace_goal(ay:'T1State-jcuEjsae', Res).
+Res = xsd:true .
+
+
+t1_test_release_precond(State, Result) :-
+t1_test_release_precond_1(State, Object, Result) :-
+
+t1_apply_release_effect(State, NextState) :-
+t1_apply_release_effect_1(State, NextState, Object) :-
+
+
+
+--------------------------------
+
+
+Test reasoning.
+1. We need to generate an instance of task.
+This will make it.
+?- t1_test_pickandplace_goal(ay:'T1State-0', Res).
+?- rdfs_subclass_of(C,ay:'T1PickAndPlaceTask').
+C = ay:'T1PickAndPlaceTask' ;
+C = ay:'T1PickAndPlaceTask-noJHgORs' ;
+C = ay:'T1PickAndPlaceTaskGoal' ;
+C = ay:'T1PickAndPlaceTask-uGmuwKPo' .
+
+
+2. THIS IS A TRICKY STEP.
+We need to assert T1Pose_A and T1Pose_B as T1State-0.thing
+otherwise selectable_action_at_state can not use them as
+properties of an action/task (cf. list_acted_on).
+To understand this, try:
+?- selectable_action_at_state(ay:'T1State-0',Act).
+Act = ay:'T1GraspingAction-TqMYcpsy' ;
+Act = ay:'T1GraspingAction-hYWVRDwq' ;
+Act = ay:'T1ReleasingAction-cnCyuEET' ;
+Act = ay:'T1ReleasingAction-sTUPUGPy' ;
+false.
+
+T1MovingAction may not be selected as it uses a T1Pose.
+
+?- create_property_some(ay:'T1State-0', ay:thing, ay:'T1Pose_A').
+?- create_property_some(ay:'T1State-0', ay:thing, ay:'T1Pose_B').
+
+Now, selectable_action_at_state gives T1MovingAction as well.
+
+?- selectable_action_at_state(ay:'T1State-0',Act).
+Act = ay:'T1GraspingAction-QETaPmhy' ;
+Act = ay:'T1GraspingAction-SJCzqwWc' ;
+Act = ay:'T1MovingAction-lfBFQQwr' ;
+Act = ay:'T1MovingAction-UnCOufXJ' ;
+Act = ay:'T1MovingAction-cxJXQvYI' ;
+Act = ay:'T1MovingAction-aiOojspS' ;
+Act = ay:'T1ReleasingAction-yUPRufkF' ;
+Act = ay:'T1ReleasingAction-VAzIBdmd' ;
+false.
+
+3. Run reasoning.
+
+NOTE: Do not forget:
+?- create_property_some(ay:'T1State-0', ay:thing, ay:'T1Pose_A').
+?- create_property_some(ay:'T1State-0', ay:thing, ay:'T1Pose_B').
+
+
+*Depth first search
+?- find_action_seq_df(ay:'T1State-0', ay:'T1PickAndPlaceTask-noJHgORs', ActSeq).
+ActSeq = [goal,ay:'T1State-TBISrcvj',ay:'T1ReleasingAction-yilmhqhm',ay:'T1State-BDeEYFJw',ay:'T1MovingAction-lkOkLpTT',ay:'T1State-kkEAiUsI',ay:'T1MovingAction-sqkJlIAf',ay:'T1State-RMERSzVr',ay:'T1MovingAction-HfVzOspl',ay:'T1State-PFcUfPNL',ay:'T1MovingAction-ucokWLUd',ay:'T1State-rqUizNCf',ay:'T1GraspingAction-KrWAZHZF',ay:'T1State-kRLzcITN',ay:'T1GraspingAction-kvTdsIqP',ay:'T1State-0']
+
+Issues!!!
+Precondition of T1GraspingAction should check if the hand is not grasping something.
+  --> This is an example of learning action
+Precondition of T1MovingAction should check if the object is already at the goal place.
+Loop detection may be mandatory to remove stupid behavior like Move to A, B, A, B,...
+This reasoning is very very slow although the domain is small.
+Why? How to speed up?
+
+
+*Breadth first search
+?- find_action_seq_bf(ay:'T1State-0', ay:'T1PickAndPlaceTask-noJHgORs', ActSeq).
+ActSeq = [ay:'T1State-0',ay:'T1GraspingAction-QOnUpBrn',ay:'T1State-tSRDrZca',ay:'T1MovingAction-lPtKJfpF',ay:'T1State-SNPZCKwT',ay:'T1ReleasingAction-JjjvOVhY',ay:'T1State-yoGaqweO',goal] .
+
+?- disp_properties(ay:'T1MovingAction-lPtKJfpF').
+[ay:'T1MovingAction-lPtKJfpF'].ay:task= ay:'T1MovingTask-mSkLaNCD'
+[ay:'T1MovingAction-lPtKJfpF',ay:task].ay:to= ay:'T1Pose_B'
+[ay:'T1MovingAction-lPtKJfpF',ay:task].ay:object= ay:'T1Obj1'
+...
+
+
+*More general query
+NOTE: Do not forget:
+?- create_property_some(ay:'T1State-0', ay:thing, ay:'T1Pose_A').
+?- create_property_some(ay:'T1State-0', ay:thing, ay:'T1Pose_B').
+
+?- create_subclass(Task, ay:'T1PickAndPlaceTask'),
+  rdf_assert(Task, rdfs:subClassOf, ay:'IndividualClass'),
+  create_property_some(Task, ay:object, ay:'T1Obj1'),
+  create_property_some(Task, ay:to, ay:'T1Pose_B'),
+  find_action_seq_bf(ay:'T1State-0', Task, ActSeq).
+
+ActSeq = [ay:'T1State-0',ay:'T1GraspingAction-eaGEoKUr',ay:'T1State-JvKdeaKX',ay:'T1MovingAction-MpwkSEDz',ay:'T1State-cfyxeiRG',ay:'T1ReleasingAction-zABSWVIL',ay:'T1State-TSJsJmVO',goal] .
+
+?- disp_properties(ay:'T1GraspingAction-eaGEoKUr').
+[ay:'T1GraspingAction-eaGEoKUr'].ay:task= ay:'T1GraspingTask-dBNggJLz'
+[ay:'T1GraspingAction-eaGEoKUr',ay:task].ay:object= ay:'T1Obj1'
+[ay:'T1GraspingAction-eaGEoKUr',ay:task].ay:hand= ay:'T1Robot1'
+...
+
+?- disp_properties(ay:'T1MovingAction-MpwkSEDz').
+[ay:'T1MovingAction-MpwkSEDz'].ay:task= ay:'T1MovingTask-vFAVTtwU'
+[ay:'T1MovingAction-MpwkSEDz',ay:task].ay:to= ay:'T1Pose_B'
+[ay:'T1MovingAction-MpwkSEDz',ay:task].ay:object= ay:'T1Obj1'
+...
+
+
+*Analysis of slowness
+
+?- profile((create_subclass(Task, ay:'T1PickAndPlaceTask'), rdf_assert(Task, rdfs:subClassOf, ay:'IndividualClass'), create_property_some(Task, ay:object, ay:'T1Obj1'), create_property_some(Task, ay:to, ay:'T1Pose_B'), find_action_seq_bf(ay:'T1State-0', Task, ActSeq))).
+
+
+----------------------------
+
+
+
